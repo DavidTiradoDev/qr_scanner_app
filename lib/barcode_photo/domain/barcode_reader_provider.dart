@@ -26,10 +26,6 @@ class BarcodePhotoProvider with ChangeNotifier {
   }
 
   Future<void> uploadImage(File image) async {
-    if (image == null) {
-      print('No se seleccionó ningún archivo.');
-      return;
-    }
     try {
       final fileName = 'public/${DateTime.now().millisecondsSinceEpoch}.jpg';
       final response =
@@ -37,12 +33,8 @@ class BarcodePhotoProvider with ChangeNotifier {
                 fileName,
                 image,
               );
-      if (response == null) {
-        _errorMessage = 'Upload error: ${response}';
-      } else {
-        print('Upload Successful');
-        _errorMessage = null;
-      }
+      print('Upload Successful');
+      _errorMessage = null;
       notifyListeners();
     } catch (e) {
       _errorMessage = 'Failed';
