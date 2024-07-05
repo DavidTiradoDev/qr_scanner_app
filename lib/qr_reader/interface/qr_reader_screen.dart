@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -33,7 +34,10 @@ class QrReaderScreen extends StatelessWidget {
               }
             }
           },
-          child: Text('Scan Qr Code'),
+          child: Text(
+            'Scan Qr Code',
+            style: GoogleFonts.nunito(),
+          ),
         ),
       ),
     );

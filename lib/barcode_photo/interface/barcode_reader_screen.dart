@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BarcodeReaderScreen extends StatelessWidget {
-  const BarcodeReaderScreen({super.key});
+class BarcodePhotoScreen extends StatelessWidget {
+  const BarcodePhotoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
