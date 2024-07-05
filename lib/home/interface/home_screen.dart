@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:qr_reader/barcode_photo/barcode_photo_injection.dart';
 import 'package:qr_reader/qr_reader/qr_reader_injection.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,14 +34,14 @@ class HomeScreen extends StatelessWidget {
             ),
             NavigatorButton(
               title: 'Foto del QR',
-              navegacion: QrReaderInjection.injection(),
+              navegacion: BarcodePhotoInjection.injection(),
             ),
             const SizedBox(
               height: 15,
             ),
             NavigatorButton(
-              title: 'Foto del barcode',
-              navegacion: QrReaderInjection.injection(),
+              title: 'Foto código de barras',
+              navegacion: BarcodePhotoInjection.injection(),
             ),
           ],
         ),
@@ -66,6 +67,7 @@ class NavigatorButton extends StatelessWidget {
       },
       borderRadius: BorderRadius.circular(16),
       child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(60),
           color: Colors.deepPurple,
@@ -75,6 +77,8 @@ class NavigatorButton extends StatelessWidget {
         child: Center(
           child: Text(
             title,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
             style: GoogleFonts.nunito(),
           ),
         ),
